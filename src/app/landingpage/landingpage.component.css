@@ -1,0 +1,68 @@
+.recipe-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.bowl-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* The bowl's base */
+.bowl {
+  width: 100%;
+  position: absolute;
+  z-index: 1; /* Ensure the bowl stays in front */
+}
+
+/* Items falling into the bowl */
+.animated-item {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  z-index: 10; /* Items behind the top part of the bowl */
+}
+
+/* Whisk falling into the bowl */
+.whisk {
+  top: -150px; /* Start above the bowl */
+  left: 40px;
+  animation: fallIntoBowl 2s ease-in-out 1s forwards;
+}
+
+/* Spoon falling into the bowl */
+.spoon {
+  top: -150px;
+  left: 80px;
+  animation: fallIntoBowl 2s ease-in-out 3s forwards;
+}
+
+/* Rolling Pin falling into the bowl */
+.rolling-pin {
+  top: -150px;
+  left: 120px;
+  animation: fallIntoBowl 2s ease-in-out 5s forwards;
+}
+
+/* Animation for items falling into the bowl */
+@keyframes fallIntoBowl {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); /* Start from above */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50px); /* Moving down */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(150px); /* Fall further down into the bowl */
+  }
+}
