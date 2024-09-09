@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingpageComponent } from './landingpage/landingpage.component';
-import { HomepageComponent } from './homepage/homepage.component';
+
 
 const routes: Routes = [
   {
@@ -16,6 +16,18 @@ const routes: Routes = [
   },
   {
     path : 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+  },
+  {
+    path : 'indian', loadChildren: () => import('./indian/indian.module').then(m => m.IndianModule)
+  },
+  {
+    path : 'italian', loadChildren: () => import('./italian/italian.module').then(m => m.ItalianModule)
+  },
+  {
+    path : 'mexican', loadChildren: () => import('./mexican/mexican.module').then(m => m.MexicanModule)
+  },
+  {
+    path : 'chinese', loadChildren: () => import('./chinese/chinese.module').then(m => m.ChineseModule)
   }
   
 ];
