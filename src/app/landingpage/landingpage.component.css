@@ -1,68 +1,227 @@
-.recipe-animation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f5f5f5;
-  position: relative;
+/* @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.bowl-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
+body {
+    /* font-family: 'Heebo', sans-serif; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/image/bg.hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+
 }
 
-/* The bowl's base */
-.bowl {
-  width: 100%;
-  position: absolute;
-  z-index: 1; /* Ensure the bowl stays in front */
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* Items falling into the bowl */
-.animated-item {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  opacity: 0;
-  animation-fill-mode: forwards;
-  z-index: 10; /* Items behind the top part of the bowl */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Whisk falling into the bowl */
-.whisk {
-  top: -150px; /* Start above the bowl */
-  left: 40px;
-  animation: fallIntoBowl 2s ease-in-out 1s forwards;
+.logo {
+    color: #FEA116;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-/* Spoon falling into the bowl */
-.spoon {
-  top: -150px;
-  left: 80px;
-  animation: fallIntoBowl 2s ease-in-out 3s forwards;
+.nav-menu {
+    display: flex;
+    list-style-type: none;
 }
 
-/* Rolling Pin falling into the bowl */
-.rolling-pin {
-  top: -150px;
-  left: 120px;
-  animation: fallIntoBowl 2s ease-in-out 5s forwards;
+.nav-menu li {
+    margin-right: 1.5rem;
 }
 
-/* Animation for items falling into the bowl */
-@keyframes fallIntoBowl {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px); /* Start from above */
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(50px); /* Moving down */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(150px); /* Fall further down into the bowl */
-  }
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative; /* Needed for the pseudo-element positioning */
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust distance from the text */
+    width: 100%;
+    height: 2px; /* Adjust thickness of the underline */
+    background-color: #FEA116; /* Underline color */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    color: white;
+}
+
+.hero-content {
+    max-width: 50%;
+    border-left: 2px solid white;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.hero-content p {
+    margin-bottom: 2rem;
+    opacity: 0.7;
+    animation: fadeInLeft 1s ease-out 0.3s;
+    animation-fill-mode: both;
+}
+
+.hero-content .book-table {
+    animation: fadeInLeft 1s ease-out 0.6s;
+    animation-fill-mode: both;
+}
+
+.food-image img {
+    width: 500px;
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .book-table:not(.hero .book-table) {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 6rem 2rem 2rem;
+        text-align: left;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .food-image img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .food-image img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        overflow-x: scroll;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.8rem;
+    }
+
+    .food-image img {
+        max-width: 50%;
+    }
 }
