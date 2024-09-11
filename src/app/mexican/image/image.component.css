@@ -21,6 +21,7 @@ a{
 .body {
     font-family: Arial, sans-serif;
     /* background-image: url("../../../assets/image/Indian.jpg"); */
+    background-image: url('../../../assets/image/mexican.jpg');
     background-repeat: no-repeat;
     background-size: cover; /* Ensures the image covers the full background */
     background-position: center;
