@@ -15,6 +15,7 @@ import { SeviyanComponent } from './seviyan/seviyan.component';
 import { ShahiComponent } from './shahi/shahi.component';
 import { SurmaiComponent } from './surmai/surmai.component';
 import { ModakComponent } from './modak/modak.component';
+import { KolhapuriComponent } from './kolhapuri/kolhapuri.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path:'modak',
     component:ModakComponent
+  },
+  {
+    path:"kolhapuri",
+    component:KolhapuriComponent
   }
 ];
 

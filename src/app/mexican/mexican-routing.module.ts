@@ -15,6 +15,7 @@ import { PozolerojoSoupComponent } from './pozolerojo-soup/pozolerojo-soup.compo
 import { ShrimpTacosComponent } from './shrimp-tacos/shrimp-tacos.component';
 import { TexmexBurritoComponent } from './texmex-burrito/texmex-burrito.component';
 import { TreslechescakeDessertComponent } from './treslechescake-dessert/treslechescake-dessert.component';
+import { ImageComponent } from './image/image.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
     path:"treslechescake-dessert",
     component:TreslechescakeDessertComponent
   },
+  {
+    path:'image',
+    component:ImageComponent
+  }
   
   
   
