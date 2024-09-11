@@ -28,7 +28,11 @@ const routes: Routes = [
   },
   {
     path : 'chinese', loadChildren: () => import('./chinese/chinese.module').then(m => m.ChineseModule)
+  },
+  {
+    path : 'recipe', loadChildren: () => import('./recipe/recipe.module').then(m => m.RecipeModule)
   }
+  
   
 ];
 
