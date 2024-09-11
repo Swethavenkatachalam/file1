@@ -10,9 +10,7 @@ import { CucuComponent } from './cucu/cucu.component';
 import { CheeComponent } from './chee/chee.component';
 import { MugComponent } from './mug/mug.component';
 import { RamenComponent } from './ramen/ramen.component';
-import { TunaComponent } from './tuna/tuna.component';
-import { AppleComponent } from './apple/apple.component';
-import { SpinachComponent } from './spinach/spinach.component';
+
 
 const routes: Routes = [
   {
