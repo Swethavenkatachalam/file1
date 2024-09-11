@@ -1,0 +1,96 @@
+/* Body Container */
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ca7fd2 0%, #e18cc9 100%);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Form Container */
+  form {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* Form Hover Effect */
+  form:hover {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Labels */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  /* Input Fields */
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Input Focus */
+  input:focus {
+    border-color: #f093fb;
+    outline: none;
+    box-shadow: 0 0 8px rgba(240, 147, 251, 0.5);
+  }
+  
+  /* Error Messages */
+  div[ngIf] {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Button Styling */
+  button {
+    width: 100%;
+    padding: 14px;
+    background-color: #f5576c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Button Hover Effect */
+  button:hover {
+    background-color: #e0435e;
+    transform: scale(1.05);
+  }
+  
+  /* Disabled Button Styling */
+  button[disabled] {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 600px) {
+    form {
+      padding: 20px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+  

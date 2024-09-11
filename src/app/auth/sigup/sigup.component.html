@@ -1,1 +1,29 @@
-<p>sigup works!</p>
+<div class="body">
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username</label>
+      <input id="username" formControlName="username" />
+      <div *ngIf="signUpForm.get('username')?.invalid && signUpForm.get('username')?.touched">
+        Username is required
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" />
+      <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+        Please enter a valid email
+      </div>
+    </div>
+  
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" />
+      <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+        Password must be at least 6 characters
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
+  </form>
+</div>
