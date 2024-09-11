@@ -17,6 +17,7 @@ import { SeviyanComponent } from './seviyan/seviyan.component';
 import { ShahiComponent } from './shahi/shahi.component';
 import { SurmaiComponent } from './surmai/surmai.component';
 import { MuttonComponent } from './mutton/mutton.component';
+import { KolhapuriComponent } from './kolhapuri/kolhapuri.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MuttonComponent } from './mutton/mutton.component';
     SeviyanComponent,
     ShahiComponent,
     SurmaiComponent,
-    MuttonComponent
+    MuttonComponent,
+    KolhapuriComponent
   ],
   imports: [
     CommonModule,

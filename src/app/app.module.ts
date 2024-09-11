@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
+import { Inject, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { AuthserviceService } from './services/authservice.service';
+
 
 
 
@@ -19,7 +21,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
